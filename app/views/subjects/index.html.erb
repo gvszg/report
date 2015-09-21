@@ -1,0 +1,5 @@
+<h3>科目列表</h3>
+
+<% @subjects.each do |subject|%>
+  <%= link_to subject.subject, classrooms_path %>
+<% end %>
