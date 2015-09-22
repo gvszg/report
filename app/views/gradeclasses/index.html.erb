@@ -1,0 +1,8 @@
+<h3>班級列表</h3>
+<%= link_to '新增班級', new_gradeclass_path %>
+<hr>
+
+<% @gradeclasses.each do |gradeclass| %>
+  <%= link_to gradeclass.gradeclass, gradeclass_students_path(gradeclass) %><br>
+<% end %>
+

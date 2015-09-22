@@ -11,18 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922005555) do
+ActiveRecord::Schema.define(version: 20150922052804) do
 
-  create_table "classrooms", force: :cascade do |t|
-    t.integer  "room_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "grade_id"
-  end
-
-  create_table "grades", force: :cascade do |t|
-    t.integer  "grade_number"
-    t.integer  "subject_id"
+  create_table "gradeclasses", force: :cascade do |t|
+    t.integer  "gradeclass"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,12 +24,11 @@ ActiveRecord::Schema.define(version: 20150922005555) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "student_id"
-    t.integer  "subject_id"
   end
 
   create_table "students", force: :cascade do |t|
     t.integer  "grade"
-    t.integer  "classroom_id"
+    t.integer  "gradeclass_id"
     t.integer  "number"
     t.string   "name"
     t.datetime "created_at"
@@ -55,7 +46,6 @@ ActiveRecord::Schema.define(version: 20150922005555) do
     t.string   "subject"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "student_id"
   end
 
 end

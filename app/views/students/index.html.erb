@@ -1,16 +1,17 @@
-<h3><%= @classroom.students.first.grade %>年<%= @classroom.room_number %>班學生</h3>
+<h3>班級：<%= @gradeclass.gradeclass %></h3>
 
 <table>
   <tr>
     <th>座號</th>
-    <th>姓名</th>
+    <th colspan='2'>姓名</th>
     <th>成績</th>
   </tr>
-  <% @classroom.students.each do |student| %>
-    <tr>
-      <td><%= student.number %></td>
+ 
+    <% @students.each do |student| %>
+      <tr>
+      <td><%= student.number%></td>
       <td><%= student.name %></td>
-      <td><%= student.score %></td>
-    </tr>  
-  <% end %>
+      </tr>
+    <% end %>
+  
 </table>

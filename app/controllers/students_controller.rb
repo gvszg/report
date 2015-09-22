@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-    @classroom = Classroom.find(params[:classroom_id])
-    @students = @classroom.students.all
+    @gradeclass = Gradeclass.find(params[:gradeclass_id])
+    @students = @gradeclass.students.all
   end
 end

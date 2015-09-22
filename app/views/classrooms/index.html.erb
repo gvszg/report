@@ -1,7 +1,0 @@
-<h3>班級列表</h3>
-
-<% @classrooms.each do |classroom|%>
-  <%= link_to classroom_students_path(classroom) do %>
-    <%= classroom.room_number %>班
-  <% end %>
-<% end %>
