@@ -1,0 +1,10 @@
+<h3>新增學生資料</h3>
+
+<%= form_for [@gradeclass, @student] do |f| %>
+  <%= f.label :number, '座號' %>
+  <%= f.text_field :number %><br>
+  <%= f.label :name, '姓名' %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.submit '新增學生' %>
+<% end %>

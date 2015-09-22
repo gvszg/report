@@ -1,9 +1,12 @@
 <h3>班級：<%= @gradeclass.gradeclass %></h3>
+<%= link_to '新增學生', new_gradeclass_student_path(@gradeclass) %>
+<%= link_to '班級列表', gradeclasses_path %>
+<hr>
 
 <table>
   <tr>
     <th>座號</th>
-    <th colspan='2'>姓名</th>
+    <th colspan='3'>姓名</th>
     <th>成績</th>
   </tr>
  
@@ -11,6 +14,7 @@
       <tr>
       <td><%= student.number%></td>
       <td><%= student.name %></td>
+      <td><%= student.scores.where(params[:id]).first.score %></td>
       </tr>
     <% end %>
   
