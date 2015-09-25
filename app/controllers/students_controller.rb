@@ -3,20 +3,15 @@ class StudentsController < ApplicationController
 
   def index
     @students = @gradeclass.students.all
-    @student = @students.where(params[:id]).first
-    @scores = @student.scores
-    @score = @scores.where(params[:id]).first.score
-    
   end
 
   def show
     @student = @students.where(params[:id]).first
-    @scores = @student.scores
-    @score = @scores.where(params[:id]).first.score
   end
 
   def new
     @student = @gradeclass.students.new
+    @score = @student.scores.new
   end
 
   def create
@@ -35,7 +30,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:number, :name)  
+    params.require(:student).permit(:number, :name, :scores_attributes => [:score])  
   end
 
   def find_gradeclass

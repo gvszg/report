@@ -14,7 +14,7 @@
       <tr>
       <td><%= student.number%></td>
       <td><%= student.name %></td>
-      <td><%= student.scores.where(params[:id]).first.score %></td>
+      <td><%= student.scores.first.score %></td>
       </tr>
     <% end %>
   

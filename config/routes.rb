@@ -2,12 +2,8 @@ Rails.application.routes.draw do
   root 'gradeclasses#index'
  
   resources :gradeclasses do
-    resources :students do
-      resources :scores
-    end
+    resources :students
   end
-  
-  
 
   resources :subjects
 end
