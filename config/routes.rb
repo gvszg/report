@@ -7,7 +7,5 @@ Rails.application.routes.draw do
     end
   end
 
-  
-
-  resources :subjects
+  resources :subjects, only: [:show, :new, :create]
 end

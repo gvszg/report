@@ -12,6 +12,15 @@
             <i class="fa fa-sun-o"></i>Home
           <% end %>
         </li>
+        <li class="dropdown">
+          <%= link_to '#', class: 'btn btn-sefault dropdown-toogle', 'data-toogle' => 'dropdown' do %>
+            科目 <span class="caret"></span></a>
+          <% end %>
+          <ul class="dropdown-menu">
+            <li class='divider'></li>
+            <li><%= link_to '新增科目', new_subject_path %></li>
+          </ul>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
