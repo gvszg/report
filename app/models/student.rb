@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  belongs_to :gradeclass
+  belongs_to :grade
   has_many :scores, dependent: :destroy
   
   accepts_nested_attributes_for :scores

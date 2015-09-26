@@ -1,9 +1,9 @@
 <form>
-  <%= form_for @gradeclass do |f| %>
+  <%= form_for @grade do |f| %>
     <div class="form-group">
-      <%= f.label :gradeclass, '班級：' %>
+      <%= f.label :number, '班級：' %>
       <div style='width: 20%;'>
-        <%= f.text_field :gradeclass, class: "form-control" %>
+        <%= f.text_field :number, class: "form-control" %>
       </div>
     </div>
     <%= f.submit '新增班級', class: "btn btn-primary" %>

@@ -1,10 +1,10 @@
 class ScoresController < ApplicationController
   def create
-    @student = @gradeclass.students.all.find(params[:id])
+    @student = @grade.students.all.find(params[:id])
     @score = @student.scores.build(score_params)
 
     if @score.svae
-      redirect_to gradeclass_students(@student)
+      redirect_to grade_students(@student)
     else
       render 'students/show'
     end

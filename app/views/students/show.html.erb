@@ -1,8 +1,7 @@
 <div class="container-fluid">
   <div class="col-md-5">
-    <%= link_to '返回班級', gradeclass_students_path(@gradeclass), class: 'btn btn-warning btn' %>
+    <%= link_to '返回班級', grade_students_path(@grade), class: 'btn btn-warning btn' %>
     <h3><%= @student.name %>的評量成績</h3>
-
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -10,7 +9,6 @@
           <th>分數</th>
         </tr>
       </thead>
-
       <% @student.scores.each do |score| %>
         <tbody>
           <tr>
@@ -25,7 +23,7 @@
     <div class="well">
       <h4>新增成績</h4>
       <form>
-      <%= form_for [@gradeclass, @student, @score] do |f| %>
+      <%= form_for [@grade, @student, @score] do |f| %>
         <div class="form-group">
           <%= f.label :score, '分數' %>
           <%= f.text_field :score, class: "form-control", style: "width: 50%;" %>

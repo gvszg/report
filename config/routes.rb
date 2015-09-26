@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root 'gradeclasses#index'
+  root 'grades#index'
  
-  resources :gradeclasses do
-    resources :students do
+  resources :grades, except: [:edit, :update, :destroy] do
+    resources :students, except: [:destroy] do
       resources :scores
     end
   end

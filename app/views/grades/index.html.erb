@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-7">
+  <h3>班級列表</h3>
+  <div style="padding-bottom: 20px;">
+    <%= link_to '新增班級', new_grade_path, class: 'btn btn-default ' %>
+  </div>
+  <table class="table table-striped">
+    <tbody>
+      <% @grades.each do |grade| %>
+      <tr>
+        <td><%= link_to grade.number, grade_students_path(grade) %></td>
+      <% end %>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

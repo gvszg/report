@@ -1,24 +1,20 @@
 <div class="container-fluid">
-
-<div class="col-md-8">
-<h3>班級：<%= @gradeclass.gradeclass %></h3>
-<%= link_to '新增學生', new_gradeclass_student_path(@gradeclass), class: 'btn btn-primary btn-sm', style: 'margin-bottom: 20px;' %>
-
-<table class="table table-bordered">
-  <tr>
-    <th>座號</th>
-    <th>姓名</th>
-    <th>查看</th>
-  </tr>
- 
-    <% @students.each do |student| %>
+  <div class="col-md-8">
+    <h3>班級：<%= @grade.number %></h3>
+      <%= link_to '新增學生', new_grade_student_path(@grade), class: 'btn btn-primary btn-sm', style: 'margin-bottom: 20px;' %>
+    <table class="table table-bordered">
       <tr>
-      <td><%= student.number%></td>
-      <td><%= student.name %></td>
-      <td><%= link_to '詳細資訊', gradeclass_student_path(@gradeclass, student) %></td>
+        <th>座號</th>
+        <th>姓名</th>
+        <th>查看</th>
       </tr>
-    <% end %>
-  
-</table>
-</div>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.number%></td>
+          <td><%= student.name %></td>
+          <td><%= link_to '詳細資訊', grade_student_path(@grade, student) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
