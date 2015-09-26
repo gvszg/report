@@ -1,8 +1,16 @@
-<%= link_to '班級列表', gradeclasses_path %>
+<form>
+  <%= form_for @gradeclass do |f| %>
+    <div class="form-group">
+      <%= f.label :gradeclass, '班級：' %>
+      <div style='width: 20%;'>
+        <%= f.text_field :gradeclass, class: "form-control" %>
+      </div>
+    </div>
+    <%= f.submit '新增班級', class: "btn btn-primary" %>
+  <% end %>
+</form>
 
-<%= form_for @gradeclass do |f| %>
-  <%= f.label :gradeclass, '班級：' %>
-  <%= f.text_field :gradeclass %>
-  <br>
-  <%= f.submit '新增班級' %>
-<% end %>
+
+
+
+

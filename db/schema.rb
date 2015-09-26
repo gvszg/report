@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925074740) do
+ActiveRecord::Schema.define(version: 20150925090347) do
 
   create_table "gradeclasses", force: :cascade do |t|
     t.integer  "gradeclass"
@@ -24,11 +24,8 @@ ActiveRecord::Schema.define(version: 20150925074740) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "student_id"
-    t.integer  "scoreable_id"
-    t.string   "scoreable_type"
+    t.integer  "subject_id"
   end
-
-  add_index "scores", ["scoreable_id"], name: "index_scores_on_scoreable_id"
 
   create_table "students", force: :cascade do |t|
     t.integer  "grade"

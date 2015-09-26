@@ -6,12 +6,12 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = @students.where(params[:id]).first
+    @student = @gradeclass.students.all.find(params[:id])
+    @score = Score.new
   end
 
   def new
     @student = @gradeclass.students.new
-    @score = @student.scores.new
   end
 
   def create
@@ -25,12 +25,20 @@ class StudentsController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
+  def update
+    
+  end
+
 
 
   private
 
   def student_params
-    params.require(:student).permit(:number, :name, :scores_attributes => [:score])  
+    params.require(:student).permit(:number, :name)  
   end
 
   def find_gradeclass

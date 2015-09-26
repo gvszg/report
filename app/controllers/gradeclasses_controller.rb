@@ -11,8 +11,8 @@ class GradeclassesController < ApplicationController
     @gradeclass = Gradeclass.new(params.require(:gradeclass).permit(:gradeclass))
 
     if @gradeclass.save
-      flash[:notice] = "班級新增成功"
-      redirect_to root_path
+      # flash[:notice] = "班級新增成功"
+      redirect_to gradeclasses_path
     else
       render :new
     end
