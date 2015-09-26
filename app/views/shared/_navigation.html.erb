@@ -6,22 +6,29 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="btn-group">
       <ul class="nav navbar-nav">
         <li class="active">
-          <%= link_to gradeclasses_path do %>
+          <%= link_to gradeclasses_path, class: 'btn btn-sm' do %>
             <i class="fa fa-sun-o"></i>Home
           <% end %>
         </li>
         <li class="dropdown">
-          <%= link_to '#', class: 'btn btn-sefault dropdown-toogle', 'data-toogle' => 'dropdown' do %>
+          <%= link_to '#', class: 'btn btn-sm dropdown-toggle', 'data-toggle' => 'dropdown' do %>
             科目 <span class="caret"></span></a>
           <% end %>
           <ul class="dropdown-menu">
+            <% Subject.all.each do |subject| %>
+              <li>
+                <%= subject.name %>
+              </li>
+            <% end %>
             <li class='divider'></li>
             <li><%= link_to '新增科目', new_subject_path %></li>
           </ul>
         </li>
       </ul>
+    </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

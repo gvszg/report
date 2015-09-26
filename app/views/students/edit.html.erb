@@ -1,22 +1,27 @@
-<h3>編輯學生資料</h3>
-<hr>
-
-<%= form_for [@gradeclass, @student] do |f| %>
-  <div class="group">  
-    <%= f.label :number, '座號' %>
-    <%= f.text_field :number %>
+<div class="container-fluid">
+  <div class="col-md-8">
+    <h3>編輯學生資料</h3>
+    <form>
+      <%= form_for [@gradeclass, @student, @score] do |f| %>
+        <div class="form-group">  
+          <%= f.label :number, '座號' %>
+          <%= f.text_field :number, class: 'form-control', style: 'width: 30%;' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name, '姓名' %>
+          <%= f.text_field :name, class: 'form-control', style: 'width: 30%;' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :subject, '科目' %>
+          <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name do |cb| %>
+            <% cb.label {cb.check_box + cb.text} %>
+          <% end %>
+        </div>
+        <div class="form-group">
+          <%= f.submit '編輯學生', class: 'btn btn-primary' %>
+           <%= link_to '返回班級', gradeclass_students_path(@gradeclass), class: 'btn btn-warning btn' %>
+        </div>  
+      <% end %>
+    </form>
   </div>
-  <div class="group">
-    <%= f.label :name, '姓名' %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="group">
-    <%= f.fields_for :scores do |s| %>
-      <%= s.label :score, '分數' %>
-      <%= s.text_field :score %>
-    <% end %>
-  </div>
-  <div class="group">
-    <%= f.submit '編輯學生' %>
-  </div>  
-<% end %>
+</div>

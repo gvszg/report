@@ -26,7 +26,8 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    
+    @student = @gradeclass.students.all.find(params[:id])
+    # @score = @student.scores.all.find_by(params[:score_id])
   end
 
   def update
